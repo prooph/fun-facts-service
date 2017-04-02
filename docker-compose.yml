@@ -1,0 +1,24 @@
+version: '2'
+services:
+  nginx:
+    image: 'prooph/nginx:www'
+    volumes:
+      - './gateway:/etc/nginx/sites-enabled:ro'
+      - './service/fun-facts/data:/var/www/public/api/v1:ro'
+    ports:
+      - '80:80'
+      - '443:443'
+  gather-package-stats:
+    image: 'prooph/php:7.1-fpm'
+    volumes:
+      - './service/gather-package-stats:/var/www'
+      - './service/fun-facts/data:/shared_mnt'
+    env_file:
+      - ./app.env
+  gather-gitter-people:
+    image: 'prooph/php:7.1-fpm'
+    volumes:
+      - './service/gather-gitter-people:/var/www'
+      - './service/fun-facts/data:/shared_mnt'
+    env_file:
+      - ./app.env

@@ -1,0 +1,28 @@
+{
+  "name": "prooph/prooph-fun-facts",
+  "license": "BSD-3-Clause",
+  "type": "prooph-micro-service",
+  "homepage": "http://getprooph.org/",
+  "authors": [
+    {
+      "name": "Alexander Miertsch",
+      "email": "contact@prooph.de",
+      "homepage": "http://prooph-software.com/"
+    },
+    {
+      "name": "Sandro Keil",
+      "email": "contact@prooph.de",
+      "homepage": "http://prooph-software.com/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ProophFunFacts\\": "src/"
+    }
+  },
+  "require": {
+    "prooph/micro": "dev-master",
+    "prooph/micro-cli": "dev-master"
+  },
+  "minimum-stability": "dev"
+}

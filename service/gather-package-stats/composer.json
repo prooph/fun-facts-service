@@ -1,0 +1,15 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "prooph-fun-facts/shared": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../shared",
+            "options": {
+                "symlink": false
+            }
+        }
+    ]
+}

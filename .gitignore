@@ -1,0 +1,5 @@
+vendor/*
+.idea
+service/*/vendor/*
+app.env
+service/fun-facts/data/*
