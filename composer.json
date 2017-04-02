@@ -1,5 +1,5 @@
 {
-  "name": "prooph/prooph-fun-facts",
+  "name": "prooph/fun-facts",
   "license": "BSD-3-Clause",
   "type": "prooph-micro-service",
   "homepage": "http://getprooph.org/",
@@ -10,18 +10,11 @@
       "homepage": "http://prooph-software.com/"
     },
     {
-      "name": "Sandro Keil",
-      "email": "contact@prooph.de",
-      "homepage": "http://prooph-software.com/"
+      "name": "Sascha-Oliver Prolic",
+      "email": "saschaprolic@googlemail.com"
     }
   ],
-  "autoload": {
-    "psr-4": {
-      "ProophFunFacts\\": "src/"
-    }
-  },
-  "require": {
-    "prooph/micro": "dev-master",
+  "require-dev": {
     "prooph/micro-cli": "dev-master"
   },
   "minimum-stability": "dev"

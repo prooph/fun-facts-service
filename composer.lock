@@ -4,63 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a713fb603b91e9735579bbaf3d3ee27",
-    "packages": [
-        {
-            "name": "beberlei/assert",
-            "version": "v2.7.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/beberlei/assert.git",
-                "reference": "3ee3bc468a3ce4bbfc3d74f53c6cdb5242d39d1a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/beberlei/assert/zipball/3ee3bc468a3ce4bbfc3d74f53c6cdb5242d39d1a",
-                "reference": "3ee3bc468a3ce4bbfc3d74f53c6cdb5242d39d1a",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.1.1",
-                "phpunit/phpunit": "^4|^5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Assert\\": "lib/Assert"
-                },
-                "files": [
-                    "lib/Assert/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Richard Quadling",
-                    "email": "rquadling@gmail.com",
-                    "role": "Collaborator"
-                }
-            ],
-            "description": "Thin assertion library for input validation in business models.",
-            "keywords": [
-                "assert",
-                "assertion",
-                "validation"
-            ],
-            "time": "2017-03-14T18:06:52+00:00"
-        },
+    "content-hash": "d97372331a007e534f327b797cc4e8c5",
+    "packages": [],
+    "packages-dev": [
         {
             "name": "ferno/loco",
             "version": "dev-master",
@@ -95,7 +41,7 @@
                 "parser",
                 "parsing"
             ],
-            "time": "2016-09-04 14:01:17"
+            "time": "2016-09-04T14:01:17+00:00"
         },
         {
             "name": "madkom/collection",
@@ -197,7 +143,7 @@
                 }
             ],
             "homepage": "http://madkom.pl/",
-            "time": "2016-10-06 09:09:33"
+            "time": "2016-10-06T09:09:33+00:00"
         },
         {
             "name": "madkom/regex",
@@ -306,313 +252,6 @@
             "time": "2016-10-07T09:33:53+00:00"
         },
         {
-            "name": "marc-mabe/php-enum",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/marc-mabe/php-enum.git",
-                "reference": "09f0163a6e040d5e9de9271fd6cfdefb12e3e498"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/marc-mabe/php-enum/zipball/09f0163a6e040d5e9de9271fd6cfdefb12e3e498",
-                "reference": "09f0163a6e040d5e9de9271fd6cfdefb12e3e498",
-                "shasum": ""
-            },
-            "require": {
-                "ext-reflection": "*",
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "suggest": {
-                "php": "PHP>=5.4 will be required for using trait EnumSerializableTrait"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.3-dev",
-                    "dev-1.x": "1.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "MabeEnum\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Marc Bennewitz",
-                    "email": "dev@mabe.berlin",
-                    "homepage": "http://mabe.berlin/",
-                    "role": "Lead"
-                }
-            ],
-            "description": "Simple and fast implementation of enumerations with native PHP 5.3 and upper",
-            "homepage": "https://github.com/marc-mabe/php-enum",
-            "keywords": [
-                "enum",
-                "enum-map",
-                "enum-set",
-                "enumeration",
-                "enummap",
-                "enumset",
-                "type-hint",
-                "typehint"
-            ],
-            "time": "2016-12-21 13:13:11"
-        },
-        {
-            "name": "paragonie/random_compat",
-            "version": "v2.0.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/634bae8e911eefa89c1abfbf1b66da679ac8f54d",
-                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*|5.*"
-            },
-            "suggest": {
-                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "lib/random.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Paragon Initiative Enterprises",
-                    "email": "security@paragonie.com",
-                    "homepage": "https://paragonie.com"
-                }
-            ],
-            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
-            "keywords": [
-                "csprng",
-                "pseudorandom",
-                "random"
-            ],
-            "time": "2017-03-13T16:27:32+00:00"
-        },
-        {
-            "name": "prooph/common",
-            "version": "v4.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/prooph/common.git",
-                "reference": "258720237856778232b72155983f34545e487d63"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/prooph/common/zipball/258720237856778232b72155983f34545e487d63",
-                "reference": "258720237856778232b72155983f34545e487d63",
-                "shasum": ""
-            },
-            "require": {
-                "beberlei/assert": "^2.7.1",
-                "php": "^7.1.0",
-                "ramsey/uuid": "^3.6.0"
-            },
-            "conflict": {
-                "php": "7.1.3"
-            },
-            "require-dev": {
-                "malukenho/docheader": "^0.1.4",
-                "phpunit/phpunit": "^6.0",
-                "prooph/bookdown-template": "^0.2.3",
-                "prooph/php-cs-fixer-config": "^0.1.1",
-                "satooshi/php-coveralls": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Prooph\\Common\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sascha-Oliver Prolic",
-                    "email": "saschaprolic@googlemail.com"
-                },
-                {
-                    "name": "Alexander Miertsch",
-                    "email": "contact@prooph.de",
-                    "homepage": "http://www.prooph.de"
-                }
-            ],
-            "description": "Common classes used across prooph packages",
-            "homepage": "http://getprooph.org/",
-            "keywords": [
-                "common",
-                "prooph"
-            ],
-            "time": "2017-03-30T07:16:18+00:00"
-        },
-        {
-            "name": "prooph/event-store",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/prooph/event-store.git",
-                "reference": "bc81cf597c004c9d3a9eb46e6cc4049221ad429c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/prooph/event-store/zipball/bc81cf597c004c9d3a9eb46e6cc4049221ad429c",
-                "reference": "bc81cf597c004c9d3a9eb46e6cc4049221ad429c",
-                "shasum": ""
-            },
-            "require": {
-                "marc-mabe/php-enum": "^2.3.1",
-                "php": "^7.1",
-                "prooph/common": "^4.1.0"
-            },
-            "conflict": {
-                "sandrokeil/interop-config": "<2.0.1"
-            },
-            "require-dev": {
-                "malukenho/docheader": "^0.1.4",
-                "phpspec/prophecy": "^1.7",
-                "phpunit/phpunit": "^6.0",
-                "prooph/bookdown-template": "^0.2.3",
-                "prooph/php-cs-fixer-config": "^0.1.1",
-                "psr/container": "^1.0",
-                "sandrokeil/interop-config": "^2.0.1",
-                "satooshi/php-coveralls": "^1.0"
-            },
-            "suggest": {
-                "prooph/event-sourcing": "Basic functionality for event sourced aggregates",
-                "prooph/pdo-event-store": "For usage with MySQL or Postgres as event store",
-                "prooph/service-bus": "Message bus facade to connect the event store with messaging systems",
-                "psr/container": "^1.0 for usage of provided factories",
-                "sandrokeil/interop-config": "For usage of provided factories"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "7.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Prooph\\EventStore\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sascha-Oliver Prolic",
-                    "email": "saschaprolic@googlemail.com"
-                },
-                {
-                    "name": "Alexander Miertsch",
-                    "email": "contact@prooph.de",
-                    "homepage": "http://www.prooph.de"
-                }
-            ],
-            "description": "PHP EventStore Implementation",
-            "homepage": "http://getprooph.org/",
-            "keywords": [
-                "EventSourcing",
-                "EventStore",
-                "ddd",
-                "prooph"
-            ],
-            "time": "2017-03-30 13:42:30"
-        },
-        {
-            "name": "prooph/micro",
-            "version": "dev-feature/use_stable_prooph_releases",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/prooph/micro.git",
-                "reference": "c568456a5c364906a72552d76c38fcdb31aa6255"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/prooph/micro/zipball/c568456a5c364906a72552d76c38fcdb31aa6255",
-                "reference": "c568456a5c364906a72552d76c38fcdb31aa6255",
-                "shasum": ""
-            },
-            "require": {
-                "prooph/event-store": "^7.0",
-                "prooph/pdo-event-store": "^1.0",
-                "prooph/snapshot-store": "^1.0"
-            },
-            "require-dev": {
-                "malukenho/docheader": "^0.1.4",
-                "phpspec/prophecy": "^1.7",
-                "phpunit/phpunit": "^6.0",
-                "prooph/php-cs-fixer-config": "^0.1.1",
-                "satooshi/php-coveralls": "^1.0"
-            },
-            "suggest": {
-                "prooph/mongodb-snapshot-store": "For MongoDB as snapshot store",
-                "prooph/pdo-snapshot-store": "For PDO as snapshot store"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Prooph\\Micro\\": "src/"
-                },
-                "files": [
-                    "src/Kernel.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sascha-Oliver Prolic",
-                    "email": "saschaprolic@googlemail.com"
-                },
-                {
-                    "name": "Alexander Miertsch",
-                    "email": "contact@prooph.de",
-                    "homepage": "http://www.prooph.de"
-                }
-            ],
-            "description": "Functional prooph for microservices",
-            "homepage": "http://getprooph.org/",
-            "keywords": [
-                "EventSourcing",
-                "EventStore",
-                "ddd",
-                "prooph"
-            ],
-            "time": "2017-03-31 17:58:06"
-        },
-        {
             "name": "prooph/micro-cli",
             "version": "dev-master",
             "source": {
@@ -674,134 +313,7 @@
                 "microservices",
                 "prooph"
             ],
-            "time": "2017-03-06 10:28:37"
-        },
-        {
-            "name": "prooph/pdo-event-store",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/prooph/pdo-event-store.git",
-                "reference": "3f30eb6276d788e6447cfec43a3d07ad3f055715"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/prooph/pdo-event-store/zipball/3f30eb6276d788e6447cfec43a3d07ad3f055715",
-                "reference": "3f30eb6276d788e6447cfec43a3d07ad3f055715",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "prooph/event-store": "^7.0"
-            },
-            "conflict": {
-                "sandrokeil/interop-config": "<2.0.1"
-            },
-            "require-dev": {
-                "malukenho/docheader": "^0.1.4",
-                "phpspec/prophecy": "^1.7",
-                "phpunit/phpunit": "^6.0",
-                "prooph/bookdown-template": "^0.2.3",
-                "prooph/php-cs-fixer-config": "^0.1.1",
-                "psr/container": "^1.0",
-                "sandrokeil/interop-config": "^2.0.1",
-                "satooshi/php-coveralls": "^1.0"
-            },
-            "suggest": {
-                "ext-pdo_mysql": "For usage with MySQL",
-                "ext-pdo_pgsql": "For usage with PostgreSQL",
-                "psr/container": "^1.0 for usage of provided factories",
-                "sandrokeil/interop-config": "^2.0.1 for usage of provided factories"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Prooph\\EventStore\\Pdo\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sascha-Oliver Prolic",
-                    "email": "saschaprolic@googlemail.com"
-                },
-                {
-                    "name": "Alexander Miertsch",
-                    "email": "contact@prooph.de",
-                    "homepage": "http://www.prooph.de"
-                }
-            ],
-            "description": "Prooph PDO EventStore",
-            "homepage": "http://getprooph.org/",
-            "time": "2017-03-30 07:41:16"
-        },
-        {
-            "name": "prooph/snapshot-store",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/prooph/snapshot-store.git",
-                "reference": "600a36435bffb2d7f49d1d90b0bf852aa0a6d0b4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/prooph/snapshot-store/zipball/600a36435bffb2d7f49d1d90b0bf852aa0a6d0b4",
-                "reference": "600a36435bffb2d7f49d1d90b0bf852aa0a6d0b4",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "prooph/common": "^4.1"
-            },
-            "require-dev": {
-                "malukenho/docheader": "^0.1.4",
-                "phpunit/phpunit": "^6.0",
-                "prooph/bookdown-template": "^0.2.3",
-                "prooph/php-cs-fixer-config": "^0.1.1",
-                "satooshi/php-coveralls": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Prooph\\SnapshotStore\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sascha-Oliver Prolic",
-                    "email": "saschaprolic@googlemail.com"
-                },
-                {
-                    "name": "Alexander Miertsch",
-                    "email": "contact@prooph.de",
-                    "homepage": "http://www.prooph.de"
-                }
-            ],
-            "description": "Prooph Snapshot Store",
-            "homepage": "http://getprooph.org/",
-            "keywords": [
-                "EventSourcing",
-                "ddd",
-                "prooph"
-            ],
-            "time": "2017-03-30 07:48:53"
+            "time": "2017-03-06T10:28:37+00:00"
         },
         {
             "name": "psr/log",
@@ -848,89 +360,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
-        },
-        {
-            "name": "ramsey/uuid",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ramsey/uuid.git",
-                "reference": "446df35e870de74381348d433e62822dc2840a5c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/446df35e870de74381348d433e62822dc2840a5c",
-                "reference": "446df35e870de74381348d433e62822dc2840a5c",
-                "shasum": ""
-            },
-            "require": {
-                "paragonie/random_compat": "^1.0|^2.0",
-                "php": "^5.4 || ^7.0"
-            },
-            "replace": {
-                "rhumsaa/uuid": "self.version"
-            },
-            "require-dev": {
-                "apigen/apigen": "^4.1",
-                "codeception/aspect-mock": "^1.0 | ^2.0",
-                "doctrine/annotations": "~1.2.0",
-                "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
-                "ircmaxell/random-lib": "^1.1",
-                "jakub-onderka/php-parallel-lint": "^0.9.0",
-                "mockery/mockery": "^0.9.4",
-                "moontoast/math": "^1.1",
-                "php-mock/php-mock-phpunit": "^0.3|^1.1",
-                "phpunit/phpunit": "^4.7|>=5.0 <5.4",
-                "satooshi/php-coveralls": "^0.6.1",
-                "squizlabs/php_codesniffer": "^2.3"
-            },
-            "suggest": {
-                "ext-libsodium": "Provides the PECL libsodium extension for use with the SodiumRandomGenerator",
-                "ext-uuid": "Provides the PECL UUID extension for use with the PeclUuidTimeGenerator and PeclUuidRandomGenerator",
-                "ircmaxell/random-lib": "Provides RandomLib for use with the RandomLibAdapter",
-                "moontoast/math": "Provides support for converting UUID to 128-bit integer (in string form).",
-                "ramsey/uuid-console": "A console application for generating UUIDs with ramsey/uuid",
-                "ramsey/uuid-doctrine": "Allows the use of Ramsey\\Uuid\\Uuid as Doctrine field type."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ramsey\\Uuid\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Huizendveld",
-                    "email": "marijn.huizendveld@gmail.com"
-                },
-                {
-                    "name": "Thibaud Fabre",
-                    "email": "thibaud@aztech.io"
-                },
-                {
-                    "name": "Ben Ramsey",
-                    "email": "ben@benramsey.com",
-                    "homepage": "https://benramsey.com"
-                }
-            ],
-            "description": "Formerly rhumsaa/uuid. A PHP 5.4+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
-            "homepage": "https://github.com/ramsey/uuid",
-            "keywords": [
-                "guid",
-                "identifier",
-                "uuid"
-            ],
-            "time": "2017-03-26 21:03:42"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "rize/uri-template",
@@ -1042,7 +472,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-27 14:51:00"
+            "time": "2017-03-27T14:51:00+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1098,7 +528,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-18 17:35:19"
+            "time": "2017-02-18T17:35:19+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -1147,7 +577,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-26 15:50:20"
+            "time": "2017-03-26T15:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1206,7 +636,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/process",
@@ -1255,7 +685,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-27 18:09:43"
+            "time": "2017-03-27T18:09:43+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -1310,7 +740,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-30 07:16:02"
+            "time": "2017-03-30T07:16:02+00:00"
         },
         {
             "name": "true/punycode",
@@ -1359,11 +789,9 @@
             "time": "2016-11-16T10:37:54+00:00"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "prooph/micro": 20,
         "prooph/micro-cli": 20
     },
     "prefer-stable": false,

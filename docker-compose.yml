@@ -8,17 +8,10 @@ services:
     ports:
       - '80:80'
       - '443:443'
-  gather-package-stats:
+  stats-collector:
     image: 'prooph/php:7.1-fpm'
     volumes:
-      - './service/gather-package-stats:/var/www'
-      - './service/fun-facts/data:/shared_mnt'
-    env_file:
-      - ./app.env
-  gather-gitter-people:
-    image: 'prooph/php:7.1-fpm'
-    volumes:
-      - './service/gather-gitter-people:/var/www'
+      - './service/stats-collector:/var/www'
       - './service/fun-facts/data:/shared_mnt'
     env_file:
       - ./app.env

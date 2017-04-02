@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace ProophFunFacts\Shared\Fn;
+namespace Prooph\FunFacts\StatsCollector\Fn;
 
 function createFunFactsFile(string $filename, array $facts): void {
     $facts = array_merge(['github_stars' => 0, 'downloads' => 0, 'gitter_people' => []], $facts);
