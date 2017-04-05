@@ -50,11 +50,33 @@ do {
 
 } while ($nextChunkAvailable);
 
-\Prooph\FunFacts\StatsCollector\Fn\upsertGitterPeopleInStaticFile($people, $funFactsFile);
+$validPeople = [];
+$promiseCollection = [];
 
-$numPeople = count($people);
+echo "Fetched " . count($people) . " people from Gitter. Now checking if avatars can be loaded:\n";
 
-echo "Successfully fetched {$numPeople} users and written to $funFactsFile\n";
+foreach ($people as $person) {
+    //Note: async requests did not work well here, maybe because too much requests in parallel ...
+    $response = $client->head($person['avatarUrlSmall'], [
+        'http_errors' => false
+    ]);
+
+    if($response->getStatusCode() === 200) {
+        $validPeople[] = $person;
+        echo "\033[32m" . $person['username'] . " is in\033[0m\n";
+    } else {
+        echo "\033[31m" . $person['username'] . " is out\e[0m\n";
+    }
+
+    //short break before next request
+    usleep(100);
+}
+
+\Prooph\FunFacts\StatsCollector\Fn\upsertGitterPeopleInStaticFile($validPeople, $funFactsFile);
+
+$numPeople = count($validPeople);
+
+echo "Successfully fetched {$numPeople} avatars and written to $funFactsFile\n";
 
 echo "Fetching packagist stats for prooph packages\n";
 
@@ -100,7 +122,7 @@ foreach ($promiseCollection as $promise) {
     $sumDownloads += $data['downloads'];
 }
 
-\Prooph\FunFacts\StatsCollector\Fn\upsertPackageStatsInStaticFile($sumGithubStars, $sumDownloads, $funFactsFile);
+\Prooph\FunFacts\StatsCollector\Fn\upsertPackageStatsInStaticFile($sumGithubStars, $sumDownloads,$funFactsFile);
 
 echo "Successfully fetched stats: GitHub Stars {$sumGithubStars}, Downloads {$sumDownloads} and written to file {$funFactsFile}\n";
 
