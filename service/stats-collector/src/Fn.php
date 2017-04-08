@@ -4,7 +4,12 @@ declare(strict_types = 1);
 namespace Prooph\FunFacts\StatsCollector\Fn;
 
 function createFunFactsFile(string $filename, array $facts): void {
-    $facts = array_merge(['github_stars' => 0, 'downloads' => 0, 'gitter_people' => []], $facts);
+    $facts = array_merge(['github_stars' => 0, 'downloads' => 0, 'gitter_people' => [], 'coverage' => [
+        'event-store' => 0,
+        'pdo-event-store' => 0,
+        'event-sourcing' => 0,
+        'service-bus' => 0,
+    ]], $facts);
 
     file_put_contents($filename, json_encode(['fun_facts' => $facts]));
 }
@@ -53,6 +58,27 @@ function upsertPackageStatsInStaticFile(int $githubStars, int $downloads, string
 
 function upsertGitterPeopleInStaticFile(array $gitterPeople, string $filename): void {
     $facts = ['gitter_people' => $gitterPeople];
+
+    if(!file_exists($filename)) {
+        createFunFactsFile($filename, $facts);
+    } else {
+        updateFunFactsFile($filename, $facts);
+    }
+}
+
+function upsertCoverallsStatsInStaticFile(
+    int $eventStoreCoverage,
+    int $pdoEventStoreCoverage,
+    int $eventSourcingCoverage,
+    int $serviceBusCoverage,
+    string $filename): void
+{
+    $facts = ['coverage' => [
+        'event-store' => $eventStoreCoverage,
+        'pdo-event-store' => $pdoEventStoreCoverage,
+        'event-sourcing' => $eventSourcingCoverage,
+        'service-bus' => $serviceBusCoverage,
+    ]];
 
     if(!file_exists($filename)) {
         createFunFactsFile($filename, $facts);

@@ -18,15 +18,16 @@ $fetchChunk = function (int $skip = 0, int $limit = 100) use ($client, $token) {
         ['Authorization' => 'Bearer ' . $token]
     );
 
-    $res = $client->send($request);
+    $res = $client->send($request, ['http_errors' => false]);
 
     if($res->getStatusCode() !== 200) {
-        echo "Failed to fetch gitter people: [{$res->getStatusCode()}] {$res->getBody()}\n";
+        echo "\033[31mFailed to fetch gitter people: [{$res->getStatusCode()}] {$res->getBody()}\033[0m\n";
         exit(1);
     }
 
     return json_decode((string)$res->getBody(), true);
 };
+
 
 $people = [];
 $skip = 0;
@@ -65,7 +66,7 @@ foreach ($people as $person) {
         $validPeople[] = $person;
         echo "\033[32m" . $person['username'] . " is in\033[0m\n";
     } else {
-        echo "\033[31m" . $person['username'] . " is out\e[0m\n";
+        echo "\033[31m" . $person['username'] . " is out\033[0m\n";
     }
 
     //short break before next request
@@ -125,5 +126,37 @@ foreach ($promiseCollection as $promise) {
 \Prooph\FunFacts\StatsCollector\Fn\upsertPackageStatsInStaticFile($sumGithubStars, $sumDownloads,$funFactsFile);
 
 echo "Successfully fetched stats: GitHub Stars {$sumGithubStars}, Downloads {$sumDownloads} and written to file {$funFactsFile}\n";
+
+echo "Fetching coveralls stats for prooph packages: event-store, pdo-event-store, event-sourcing, service-bus\n";
+
+$fetchCoverage = function($package) use ($client): int {
+    $repoUrl = "https://coveralls.io/github/prooph/$package.json?branch=master";
+
+    $res = $client->get($repoUrl, ['http_errors' => false]);
+
+    if($res->getStatusCode() !== 200) {
+        echo "\033[31mFailed to fetch test coverage for prooph/$package\033[0m\n";
+        return 0;
+    }
+
+    $coverage = json_decode((string)$res->getBody(), true);
+
+    return (int)round($coverage['covered_percent'] ?? 0);
+};
+
+$eventStoreCoverage = $fetchCoverage('event-store');
+$pdoEventStoreCoverage = $fetchCoverage('pdo-event-store');
+$eventSourcingCoverage = $fetchCoverage('event-sourcing');
+$serviceBusCoverage = $fetchCoverage('service-bus');
+
+\Prooph\FunFacts\StatsCollector\Fn\upsertCoverallsStatsInStaticFile(
+    $eventStoreCoverage,
+    $pdoEventStoreCoverage,
+    $eventSourcingCoverage,
+    $serviceBusCoverage,
+    $funFactsFile
+);
+
+echo "Successfully fetched coveralls stats: event-store - $eventSourcingCoverage %, pdo-event-store - $pdoEventStoreCoverage %, event-sourcing - $eventSourcingCoverage %, service-bus - $serviceBusCoverage %\n";
 
 exit(0);
