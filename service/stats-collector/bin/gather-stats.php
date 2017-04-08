@@ -157,6 +157,6 @@ $serviceBusCoverage = $fetchCoverage('service-bus');
     $funFactsFile
 );
 
-echo "Successfully fetched coveralls stats: event-store - $eventSourcingCoverage %, pdo-event-store - $pdoEventStoreCoverage %, event-sourcing - $eventSourcingCoverage %, service-bus - $serviceBusCoverage %\n";
+echo "Successfully fetched coveralls stats: event-store - $eventStoreCoverage %, pdo-event-store - $pdoEventStoreCoverage %, event-sourcing - $eventSourcingCoverage %, service-bus - $serviceBusCoverage %\n";
 
 exit(0);
