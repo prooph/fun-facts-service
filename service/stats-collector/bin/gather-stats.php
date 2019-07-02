@@ -8,6 +8,18 @@ require 'vendor/autoload.php';
 $client = new \GuzzleHttp\Client();
 $token = getenv('GITTER_AUTH_TOKEN');
 $funFactsFile = getenv('FUN_FACTS_FILE');
+$packageBlacklist = [
+    'prooph/link',
+    'prooph/processing',
+    'prooph/link-dashboard',
+    'prooph/link-message-queue',
+    'prooph/link-processor-proxy',
+    'prooph/link-monitor',
+    'prooph/link-sql-connector',
+    'prooph/link-file-connector',
+    'prooph/link-app-core',
+    'prooph/link-process-manager',
+];
 
 echo "Fetching active users of gitter room prooph/improoph\n";
 
@@ -38,7 +50,7 @@ do {
 
     $chunkCount = count($chunkOfPeople);
 
-    $nextChunkAvailable = $chunkCount === $limit;
+    $nextChunkAvailable = $chunkCount > 0;
 
     foreach ($chunkOfPeople as $dev) {
         $people[] = [
@@ -110,6 +122,9 @@ $data = json_decode((string)$res->getBody(), true);
 $promiseCollection = [];
 
 foreach ($data['packageNames'] ?? [] as $package) {
+    if (in_array($package, $packageBlacklist)) {
+        continue;
+    }
     /** @var \GuzzleHttp\Promise\PromiseInterface[] $promiseCollection */
     $promiseCollection[] = $fetchPackageData($package);
 }
