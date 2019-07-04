@@ -145,6 +145,12 @@ echo "Successfully fetched stats: GitHub Stars {$sumGithubStars}, Downloads {$su
 echo "Fetching coveralls stats for prooph packages: event-store, pdo-event-store, event-sourcing, service-bus\n";
 
 $fetchCoverage = function($package) use ($client): int {
+    if($package === 'event-store') {
+        $branch = '7.x';
+    } else {
+        $branch = 'master';
+    }
+
     $repoUrl = "https://coveralls.io/github/prooph/$package.json?branch=master";
 
     $res = $client->get($repoUrl, ['http_errors' => false]);
