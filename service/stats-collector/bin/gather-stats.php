@@ -151,7 +151,7 @@ $fetchCoverage = function($package) use ($client): int {
         $branch = 'master';
     }
 
-    $repoUrl = "https://coveralls.io/github/prooph/$package.json?branch=master";
+    $repoUrl = "https://coveralls.io/github/prooph/$package.json?branch=$branch";
 
     $res = $client->get($repoUrl, ['http_errors' => false]);
 
